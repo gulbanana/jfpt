@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -9,8 +8,8 @@ namespace JFPT
     {
         public App()
         {
+            Data.Init(Device.RuntimePlatform);
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 

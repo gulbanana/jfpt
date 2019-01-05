@@ -10,5 +10,6 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="Microsoft.Data.SQLite" Version="2.2.0" />
   </ItemGroup>
 </Project>

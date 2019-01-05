@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace JFPT
@@ -12,6 +8,24 @@ namespace JFPT
         public MainPage()
         {
             InitializeComponent();
+
+            try
+            {
+                using (var connection = Data.Connect())
+                {
+                    connection.Open();
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = "select [Hello] from [Test] limit 1";
+                        var data = command.ExecuteScalar();
+                        MainLabel.Text = (string)data;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MainLabel.Text = "Hello, world!";
+            }
         }
     }
 }
