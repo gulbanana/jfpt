@@ -5,5 +5,9 @@
         <Label x:Name="MainLabel" x:FieldModifier="public"
                Text="Welcome to Xamarin.Forms!" 
                HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <Button Text="Add Product"  
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="OnButtonClicked"/> 
     </StackLayout>
 </ContentPage>
