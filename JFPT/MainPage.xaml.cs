@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace JFPT
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : NavigationPage
     {
         public MainPage()
         {
@@ -26,6 +26,12 @@ namespace JFPT
             {
                 MainLabel.Text = "Hello, world!";
             }
+        }
+
+        async public void OnButtonClicked(object sender, EventArgs args)
+        {
+            await PushAsync(new JFPT.ProductMenu());
+            //await MainLabel.RelRotateTo(360, 1000);
         }
     }
 }
